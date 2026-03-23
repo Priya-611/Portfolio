@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#c084fc">
+  <title>Priya Rawat | ML Engineer &amp; Data Scientist</title>
+  <meta name="description"
+    content="Portfolio of Priya Rawat — Machine Learning Engineer &amp; Data Scientist specializing in ML, Data Analytics, and Python Development.">
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap"
+    as="style">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* gradient defs only */
+    #grad-def {
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SVG gradient def for radial rings -->
+  <svg id="grad-def" aria-hidden="true">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#7c3aed" />
+        <stop offset="100%" stop-color="#c084fc" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ── Preloader ── -->
+  <div id="preloader">
+    <div class="pl-ring"></div>
+    <div class="pl-text">INITIALIZING..</div>
+  </div>
+
+  <!-- ── Custom Cursor ── -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ── Background - DISABLED FOR PERFORMANCE ── -->
+  <!-- ── Animated Glowing Orbs ── -->
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+  <div class="bg-shape shape-3"></div>
+
+  <!-- ── Neural Background Canvas ── -->
+  <canvas id="bg"></canvas>
+
+  <!-- ── Navigation ── -->
+  <nav>
+    <a href="#home" style="text-decoration: none;">
+      <div class="logo">PR<span style="color:var(--c1)">.</span></div>
+    </a>
+    <div class="nav-actions" style="display:flex;align-items:center;gap:1.5rem;">
+      <a href="https://github.com/Priya-611" class="nav-cta" target="_blank"><i class="fab fa-github"
+          style="margin-right:.4rem;"></i>GitHub</a>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#dsa">DSA</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="home">
+    <div class="hero-wrap">
+      <div class="hero-badge" style="margin-bottom:2rem;">
+        <a href="#contact" style="color: inherit; text-decoration: none;"><span></span> Available for opportunities</a>
+      </div>
+      <h1 class="hero-name hero-anim">
+        <span class="line1">Priya Rawat</span>
+        <span class="line2">ML Engineer</span>
+      </h1>
+      <p class="hero-title hero-anim">Data Scientist &amp; Python Developer</p>
+      <div class="hero-typing hero-anim">&gt; <span id="typer"></span></div>
+      <div class="hero-btns hero-anim">
+        <a href="#projects" class="btn btn-glow"><i class="fas fa-rocket" style="margin-right:.5rem;"></i> View
+          Projects</a>
+        <a href="https://www.linkedin.com/in/priyarawat05/" class="btn btn-ghost" target="_blank"><i
+            class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <a href="https://github.com/Priya-611" class="btn btn-ghost" target="_blank"
+          style="border-color:rgba(240,171,252,.3);color:var(--c3)"><i class="fab fa-github"></i> GitHub</a>
+        <a href="priya resume current_newesttttt.pdf" class="btn btn-ghost" download
+          style="border-color:rgba(34,197,94,.3);color:#22c55e"><i class="fas fa-file-pdf"
+            style="margin-right:.5rem;"></i> Resume</a>
+      </div>
+      <div class="hero-stats hero-anim">
+        <div class="hero-stat">
+          <span class="num" data-to="15" data-suffix="+">0+</span>
+          <span class="lbl">Projects</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="hero-stat">
+          <a href="#dsa" style="text-decoration:none;">
+            <span class="num" data-to="350" data-suffix="+">0+</span>
+            <span class="lbl">DSA Questions</span>
+          </a>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="hero-stat">
+          <span class="num" data-to="8" data-suffix=".51">0</span>
+          <span class="lbl">CGPA Score</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="s-head reveal">
+      <span class="s-label">// who am i</span>
+      <h2 class="s-title">About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal-left">
+        <p>I'm an aspiring <span class="hl">Machine Learning Engineer</span> and <span class="hl">Data Scientist</span>
+          with a passion for building intelligent, data-driven systems that solve real-world problems.</p>
+        <p>My expertise spans <span class="hl">Python</span>, <span class="hl">Machine Learning</span>, and <span
+            class="hl">Data Analytics</span>. I enjoy crafting predictive models and insightful dashboards that turn raw
+          data into actionable intelligence.</p>
+        <p>Currently pursuing my B.Tech in <span class="hl">Computer Science &amp; Engineering</span> at Lovely
+          Professional University, I'm always exploring new challenges at the intersection of AI and Software
+          Engineering.</p>
+        <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="#projects" class="btn btn-glow" style="padding:.7rem 1.6rem;font-size:.85rem;"><i
+              class="fas fa-folder-open" style="margin-right:.5rem;"></i> My Work</a>
+          <a href="mailto:priyarawat2334@gmail.com" class="btn btn-ghost"
+            style="padding:.7rem 1.6rem;font-size:.85rem;"><i class="fas fa-envelope" style="margin-right:.5rem;"></i>
+            Get In Touch</a>
+          <a href="priya resume current_newesttttt.pdf" class="btn btn-ghost" download
+            style="padding:.7rem 1.6rem;font-size:.85rem;border-color:rgba(34,197,94,.3);color:#22c55e"><i
+              class="fas fa-file-pdf" style="margin-right:.5rem;"></i> Download Resume</a>
+        </div>
+      </div>
+      <div class="about-card reveal-right">
+        <h2 style="font-family:var(--fh);font-size:2rem;font-weight:700;color:var(--c1);margin-bottom:1rem;">Status</h2>
+        <div class="meta-grid">
+          <div class="meta-item">
+            <div class="val c1">3+</div>
+            <div class="key">Projects Built</div>
+          </div>
+          <div class="meta-item">
+            <div class="val c2">8.51</div>
+            <div class="key">CGPA </div>
+          </div>
+          <div class="meta-item">
+            <div class="val c3">4+</div>
+            <div class="key">Certifications</div>
+          </div>
+          <div class="meta-item">
+            <div class="val c1">∞</div>
+            <div class="key">Curiosity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills">
+    <div class="s-head reveal">
+      <span class="s-label">// capabilities</span>
+      <h2 class="s-title">Technological Arsenal</h2>
+    </div>
+    <div class="skills-layout reveal">
+      <!-- Radial Cards -->
+      <div>
+        <div class="radial-grid">
+          <div class="radial-card">
+            <div class="radial-ring">
+              <svg viewBox="0 0 100 100">
+                <circle class="track" cx="50" cy="50" r="45" />
+                <circle class="fill" cx="50" cy="50" r="45" data-pct="90" />
+              </svg>
+              <div class="radial-pct">90%</div>
+            </div>
+            <h4>Python</h4>
+            <p>Pandas · NumPy · Scikit</p>
+          </div>
+          <div class="radial-card">
+            <div class="radial-ring">
+              <svg viewBox="0 0 100 100">
+                <circle class="track" cx="50" cy="50" r="45" />
+                <circle class="fill" cx="50" cy="50" r="45" data-pct="85" />
+              </svg>
+              <div class="radial-pct">85%</div>
+            </div>
+            <h4>Machine Learning</h4>
+            <p>Scikit-learn · XGBoost</p>
+          </div>
+          <div class="radial-card">
+            <div class="radial-ring">
+              <svg viewBox="0 0 100 100">
+                <circle class="track" cx="50" cy="50" r="45" />
+                <circle class="fill" cx="50" cy="50" r="45" data-pct="80" />
+              </svg>
+              <div class="radial-pct">80%</div>
+            </div>
+            <h4>Data Analytics</h4>
+            <p>Tableau · Power BI · SQL</p>
+          </div>
+          <div class="radial-card">
+            <div class="radial-ring">
+              <svg viewBox="0 0 100 100">
+                <circle class="track" cx="50" cy="50" r="45" />
+                <circle class="fill" cx="50" cy="50" r="45" data-pct="75" />
+              </svg>
+              <div class="radial-pct">75%</div>
+            </div>
+            <h4>Deep Learning</h4>
+            <p>TensorFlow · Keras</p>
+          </div>
+        </div>
+      </div>
+      <!-- Tech Chips -->
+      <div class="tech-stack">
+        <h4><i class="fas fa-laptop-code" style="margin-right:.6rem; color:var(--c1);"></i>Programming Languages</h4>
+        <div class="tech-chips">
+          <span class="chip">Python</span><span class="chip">C</span><span class="chip">C++</span>
+          <span class="chip">SQL</span><span class="chip">HTML</span><span class="chip">CSS</span>
+        </div>
+        <h4 style="margin-top:1.5rem;"><i class="fas fa-brain" style="margin-right:.6rem; color:var(--c1);"></i>ML / AI
+          Frameworks</h4>
+        <div class="tech-chips">
+          <span class="chip">Scikit-learn</span><span class="chip">TensorFlow</span><span class="chip">Keras</span>
+          <span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span>
+          <span class="chip">Seaborn</span><span class="chip">NLP (NLTK)</span>
+        </div>
+        <h4 style="margin-top:1.5rem;"><i class="fas fa-tools" style="margin-right:.6rem; color:var(--c1);"></i>Tools &
+          Platforms</h4>
+        <div class="tech-chips">
+          <span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">MySQL</span>
+          <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span>
+          <span class="chip">Jupyter</span><span class="chip">Google Colab</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="charts-wrap reveal" style="margin-top:3rem;">
+      <div class="chart-card">
+        <h4><i class="fas fa-chart-column" style="color:var(--c1);margin-right:.5rem;"></i>Proficiency Metrics</h4>
+        <div class="bar-chart">
+          <div class="bc-row"><span class="bc-label">Python</span>
+            <div class="bc-track">
+              <div class="bc-fill" data-w="90%"></div>
+            </div><span class="bc-pct">90%</span>
+          </div>
+          <div class="bc-row"><span class="bc-label">Machine Learning</span>
+            <div class="bc-track">
+              <div class="bc-fill" data-w="85%"></div>
+            </div><span class="bc-pct">85%</span>
+          </div>
+          <div class="bc-row"><span class="bc-label">Data Analysis</span>
+            <div class="bc-track">
+              <div class="bc-fill" data-w="82%"></div>
+            </div><span class="bc-pct">82%</span>
+          </div>
+          <div class="bc-row"><span class="bc-label">Tableau/BI</span>
+            <div class="bc-track">
+              <div class="bc-fill" data-w="80%"></div>
+            </div><span class="bc-pct">80%</span>
+          </div>
+          <div class="bc-row"><span class="bc-label">Deep Learning</span>
+            <div class="bc-track">
+              <div class="bc-fill" data-w="75%"></div>
+            </div><span class="bc-pct">75%</span>
+          </div>
+          <div class="bc-row"><span class="bc-label">SQL / Databases</span>
+            <div class="bc-track">
+              <div class="bc-fill" data-w="78%"></div>
+            </div><span class="bc-pct">78%</span>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h4><i class="fas fa-chart-pie" style="color:var(--c2);margin-right:.5rem;"></i>Focus Distribution</h4>
+        <div class="donut-wrap">
+          <canvas id="donut-canvas"></canvas>
+          <div class="donut-legend">
+            <div class="dl-item">
+              <div class="dl-dot" style="background:#c084fc"></div>Python Development (35%)
+            </div>
+            <div class="dl-item">
+              <div class="dl-dot" style="background:#862bd6"></div>Machine Learning (30%)
+            </div>
+            <div class="dl-item">
+              <div class="dl-dot" style="background:#ee84ee"></div>Data Analytics (20%)
+            </div>
+            <div class="dl-item">
+              <div class="dl-dot" style="background:#51a0e4"></div>Deep Learning (15%)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <div class="s-head reveal">
+      <span class="s-label">// featured work</span>
+      <h2 class="s-title">Projects</h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="proj-card reveal">
+        <div class="proj-banner" style="background:linear-gradient(135deg,#1a0a20,#2d1040);">
+          <i class="fas fa-heartbeat icon"></i>
+          <div class="proj-glow" style="background:radial-gradient(circle,rgba(240,171,252,.15),transparent 70%);">
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">Machine Learning</span><span class="ptag">Python</span><span
+              class="ptag">Scikit-learn</span></div>
+          <h3>Heart Disease Risk Predictor</h3>
+          <p>A predictive ML model that estimates the risk of heart disease using patient health metrics. Implements
+            classification algorithms with data preprocessing, feature engineering, and model evaluation.</p>
+          <div class="proj-links">
+            <a href="#" class="proj-link primary" data-proj="Heart Disease Risk Predictor"><span
+                style="margin-right:.3rem;">🔍</span> Details</a>
+            <a href="https://github.com/Priya-611/Heart-Disease-Risk-Predictor" class="proj-link ghost"
+              target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-banner" style="background:linear-gradient(135deg,#0a1620,#0d2840);">
+          <i class="fas fa-chart-line icon"></i>
+          <div class="proj-glow" style="background:radial-gradient(circle,rgba(192,132,252,.15),transparent 70%);">
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">Data Analytics</span><span class="ptag">Power BI</span><span
+              class="ptag">Excel</span></div>
+          <h3>Adidas Sales Dashboard</h3>
+          <p>An interactive sales analytics dashboard built with Excel and Power BI that visualizes Adidas sales data
+            across regions, product lines, and time periods to uncover key business insights.</p>
+          <div class="proj-links">
+            <a href="#" class="proj-link primary" data-proj="Adidas Sales Dashboard"><span
+                style="margin-right:.3rem;">🔍</span> Details</a>
+            <a href="https://github.com/Priya-611/Adidas-Sales-Dashboard" class="proj-link ghost" target="_blank"><i
+                class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-banner" style="background:linear-gradient(135deg,#0a2015,#0d3520);">
+          <i class="fas fa-house-user icon"></i>
+          <div class="proj-glow" style="background:radial-gradient(circle,rgba(34,197,94,.12),transparent 70%);"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">Machine Learning</span><span class="ptag">Regression</span><span
+              class="ptag">Python</span></div>
+          <h3>House Price Predictor</h3>
+          <p>A regression-based ML model to predict house prices using features like location, area, and amenities.
+            Includes EDA, feature selection, and model comparison across multiple regression algorithms.</p>
+          <div class="proj-links">
+            <a href="#" class="proj-link primary" data-proj="House Price Predictor"><span
+                style="margin-right:.3rem;">🔍</span> Details</a>
+            <a href="https://github.com/Priya-611/House-Price-Predictor" class="proj-link ghost" target="_blank"><i
+                class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── DSA ── -->
+  <section id="dsa">
+    <div class="s-head reveal">
+      <span class="s-label">// problem solving</span>
+      <h2 class="s-title">DSA &amp; Competitive Programming</h2>
+    </div>
+
+    <!-- Platform Cards -->
+    <div class="dsa-platform-row reveal">
+
+      <div class="dsa-platform-card lc-card">
+        <div class="dsa-plat-header">
+          <div class="dsa-plat-icon lc-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <path
+                d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.177-1.106 4.6.024a3.019 3.019 0 0 1 .836 1.179 2.878 2.878 0 0 1 .236.748 1.374 1.374 0 0 0 2.718-.44 5.654 5.654 0 0 0-.444-1.422 5.765 5.765 0 0 0-1.517-2.016c-1.9-1.57-4.584-1.729-6.635-.467L6.95 4.262a1.374 1.374 0 0 0 .003-1.946L8.367.9A1.374 1.374 0 0 0 7.41.003L7.4 0h-.004a1.37 1.37 0 0 0-.954.4L5.03 1.82a4.167 4.167 0 0 0-.003 5.888l1.09 1.09a8.344 8.344 0 0 1 7.413-2.614 8.29 8.29 0 0 1 2.229.727 8.553 8.553 0 0 1 2.305 1.709 8.416 8.416 0 0 1 2.258 5.977 8.345 8.345 0 0 1-2.453 5.742l-2.396 2.392a6.77 6.77 0 0 1-9.556-.084l-4.277-4.193A9.301 9.301 0 0 1 .5 12.03a9.022 9.022 0 0 1-.09-3.643 8.836 8.836 0 0 1 .195-.8 8.755 8.755 0 0 1 2.01-3.492L6.47 0H13.483z" />
+            </svg>
+          </div>
+          <div>
+            <h3>LeetCode</h3>
+            <span class="dsa-plat-sub">Data Structures &amp; Algorithms</span>
+          </div>
+          <a href="https://leetcode.com/u/PriyaRawat/" class="dsa-plat-link" target="_blank"><span
+              style="font-size:0.8rem;">🔗</span></a>
+        </div>
+        <div class="dsa-big-stat">
+          <span class="dsa-big-num lc-color" data-to="290" data-suffix="+">0+</span>
+          <span class="dsa-big-label">Problems Solved</span>
+        </div>
+        <div class="dsa-diff-row">
+          <div class="diff-pill easy"><span class="diff-dot"></span>Easy<span class="diff-count">160</span></div>
+          <div class="diff-pill medium"><span class="diff-dot"></span>Medium<span class="diff-count">140</span></div>
+          <div class="diff-pill hard"><span class="diff-dot"></span>Hard<span class="diff-count">14</span></div>
+        </div>
+        <div class="dsa-progress-bar">
+          <div class="dsa-bar-fill" data-w="71%" style="background:linear-gradient(90deg,#f59e0b,#ef4444);"></div>
+        </div>
+        <p class="dsa-plat-note">Consistent problem-solving across Arrays, DP, Trees, Graphs &amp; Strings.</p>
+      </div>
+
+      <div class="dsa-platform-card gfg-card">
+        <div class="dsa-plat-header">
+          <div class="dsa-plat-icon gfg-icon">
+            <i class="fas fa-laptop-code" style="font-size:1.6rem;"></i>
+          </div>
+          <div>
+            <h3>GeeksForGeeks</h3>
+            <span class="dsa-plat-sub">CS Fundamentals &amp; Practice</span>
+          </div>
+          <a href="https://www.geeksforgeeks.org/profile/priyarawp4gt?tab=activity" class="dsa-plat-link"
+            target="_blank"><i class="fas fa-external-link-alt" style="font-size:0.8rem;"></i></a>
+        </div>
+        <div class="dsa-big-stat">
+          <span class="dsa-big-num gfg-color" data-to="80" data-suffix="+">0+</span>
+          <span class="dsa-big-label">Problems Solved</span>
+        </div>
+        <div class="dsa-diff-row">
+          <div class="diff-pill easy"><span class="diff-dot"></span>Easy<span class="diff-count">11</span></div>
+          <div class="diff-pill medium"><span class="diff-dot"></span>Hard<span class="diff-count">8</span></div>
+          <div class="diff-pill hard"><span class="diff-dot" style="background:#2f8d46;"></span>Medium<span
+              class="diff-count">44</span></div>
+        </div>
+        <div class="dsa-progress-bar">
+          <div class="dsa-bar-fill" data-w="29%" style="background:linear-gradient(90deg,#2f8d46,#00b894);"></div>
+        </div>
+        <p class="dsa-plat-note">Practiced core CS concepts including OS, DBMS, and algorithmic thinking.</p>
+      </div>
+
+      <!-- Total Banner -->
+      <div class="dsa-total-card">
+        <div class="dsa-total-glow"></div>
+        <div class="dsa-total-label">Total Questions</div>
+        <div class="dsa-total-num" data-to="350" data-suffix="+">0+</div>
+        <div class="dsa-total-sub">across both platforms</div>
+        <div class="dsa-topic-pills">
+          <span class="topic-pill">Arrays</span>
+          <span class="topic-pill">Strings</span>
+          <span class="topic-pill">Linked Lists</span>
+          <span class="topic-pill">Trees</span>
+          <span class="topic-pill">Graphs</span>
+          <span class="topic-pill">Dynamic Prog.</span>
+          <span class="topic-pill">Recursion</span>
+          <span class="topic-pill">Sorting</span>
+          <span class="topic-pill">Hashing</span>
+          <span class="topic-pill">Binary Search</span>
+          <span class="topic-pill">Greedy</span>
+          <span class="topic-pill">Stacks &amp; Queues</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section id="education">
+    <div class="s-head reveal">
+      <span class="s-label">// academic background</span>
+      <h2 class="s-title">Education</h2>
+    </div>
+    <div class="timeline reveal">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2023 — 2027</span>
+        <div class="tl-card">
+          <h3>B.Tech — Computer Science &amp; Engineering</h3>
+          <span class="org">Lovely Professional University, Phagwara &bull; CGPA: 8.51</span>
+          <p>Pursuing a comprehensive CSE program with a focus on AI, Machine Learning, and Data Science. Active
+            participant in technical clubs and hackathons, building real-world projects in ML and analytics.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2023</span>
+        <div class="tl-card">
+          <h3>Class XII — Science (PCM)</h3>
+          <span class="org">Jaycees Public School, Rudrapur &bull; 94.2%</span>
+          <p>Completed higher secondary education with a strong foundation in Physics, Chemistry, and Mathematics,
+            cultivating an analytical mindset for engineering and problem-solving.</p>
+        </div>
+      </div>
+
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-date">2021</span>
+        <div class="tl-card">
+          <h3>Class X</h3>
+          <span class="org">Jaycees Public School &bull; 91.8%</span>
+          <p>Completed secondary education with a strong foundation in core subjects, developing fundamental knowledge
+            and study skills essential for higher education.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── INTERNSHIPS / EXPERIENCE ── -->
+  <section id="experience">
+    <div class="s-head reveal">
+      <span class="s-label">// work experience</span>
+      <h2 class="s-title">Internships &amp; Training</h2>
+    </div>
+    <div class="exp-cards reveal">
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-icon"><i class="fas fa-briefcase"></i></div>
+          <div>
+            <h3><a
+                href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_cqf7ifpqNAeiz6NKo_1755344527289_completion_certificate.pdf"
+                target="_blank">Data Analytics Job Simulation</a></h3>
+            <span class="exp-org">Deloitte x Forage</span>
+          </div>
+          <span class="exp-badge">Virtual Internship</span>
+        </div>
+        <span class="exp-date">2025</span>
+        <ul class="exp-list">
+          <li>Completed a virtual data analytics simulation involving real-world business datasets.</li>
+          <li>Gained hands-on experience in data cleaning, EDA, and creating interactive dashboards using Tableau.</li>
+          <li>Delivered data-driven insights to simulate stakeholder presentations.</li>
+        </ul>
+        <div class="exp-skills">
+          <span class="chip">Tableau</span><span class="chip">Data Analysis</span><span class="chip">Excel</span><span
+            class="chip">Visualization</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-icon"><i class="fas fa-chart-bar"></i></div>
+          <div>
+            <h3><a
+                href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_cqf7ifpqNAeiz6NKo_1755419112933_completion_certificate.pdf"
+                target="_blank">Data Science Job Simulation</a></h3>
+            <span class="exp-org">Tata Group x Forage</span>
+          </div>
+          <span class="exp-badge">Virtual Internship</span>
+        </div>
+        <span class="exp-date">2025</span>
+        <ul class="exp-list">
+          <li>Engaged with a virtual data science project simulating real Tata Group business challenges.</li>
+          <li>Developed skills in framing analytical problems and creating compelling data visualizations.</li>
+          <li>Communicated data-driven insights clearly to non-technical business stakeholders.</li>
+        </ul>
+        <div class="exp-skills">
+          <span class="chip">Python</span><span class="chip">Data Science</span><span
+            class="chip">Visualization</span><span class="chip">Business Analytics</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-icon-wrap"></div>
+        <div class="exp-header">
+          <div class="exp-icon"><i class="fas fa-laptop-code"></i></div>
+          <div>
+            <h3><a href="https://drive.google.com/file/d/1NHhy7-XdUtrMI7FyVaYrpBILXIdJNL3d/view?usp=sharing"
+                target="_blank">Industrial Training — Data Science</a></h3>
+            <span class="exp-org">CSE Pathshala</span>
+          </div>
+          <span class="exp-badge">6 Weeks Training</span>
+        </div>
+        <span class="exp-date">2025</span>
+        <ul class="exp-list">
+          <li>Completed intensive 6-week industry training in Data Science and Machine Learning fundamentals.</li>
+          <li>Worked on Python, EDA, feature engineering, and building predictive ML models.</li>
+          <li>Delivered 3 capstone projects applying various ML algorithms to real-world datasets.</li>
+        </ul>
+        <div class="exp-skills">
+          <span class="chip">Python</span><span class="chip">ML Algorithms</span><span class="chip">EDA</span><span
+            class="chip">Feature Engineering</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CERTIFICATIONS ── -->
+  <section id="certifications">
+    <div class="s-head reveal">
+      <span class="s-label">// credentials</span>
+      <h2 class="s-title">Certifications</h2>
+    </div>
+    <div class="certs-grid reveal">
+
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fas fa-server"></i></div>
+        <div class="cert-body">
+          <h3><a href="https://coursera.org/share/d902d8e4f75308eabbaed9ad53fec57d" target="_blank">Introduction to Deep
+              Learning & Neural Networks with Keras</a></h3>
+          <span class="cert-issuer"><i class="fas fa-award"></i> Coursera</span>
+          <p>Mastered deep learning fundamentals including neural networks, activation functions, and model
+            architectures for regression and classification tasks.</p>
+          <div class="cert-frameworks">
+            <span class="framework-tag">Keras</span>
+            <span class="framework-tag">TensorFlow</span>
+            <span class="framework-tag">CNNs</span>
+            <span class="framework-tag">RNNs</span>
+            <span class="framework-tag">Transformers</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fas fa-robot"></i></div>
+        <div class="cert-body">
+          <h3><a href="https://www.coursera.org/verify/4VC7B4A0ZZTG" target="_blank">Machine Learning with Python</a>
+          </h3>
+          <span class="cert-issuer"><i class="fas fa-award"></i> IBM / Coursera</span>
+          <p>Covered essential machine learning concepts including supervised and unsupervised learning algorithms,
+            model evaluation, and validation techniques.</p>
+          <div class="cert-frameworks">
+            <span class="framework-tag">Python</span>
+            <span class="framework-tag">scikit-learn</span>
+            <span class="framework-tag">NumPy</span>
+            <span class="framework-tag">Pandas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fab fa-python"></i></div>
+        <div class="cert-body">
+          <h3><a href="https://drive.google.com/file/d/131foWqOEaShzzIO5AE8TgAA9K--oAY9R/view?usp=sharing"
+              target="_blank">Oracle Cloud Infrastructure 2025 Certified Data Science Professional</a></h3>
+          <span class="cert-issuer"><i class="fas fa-award"></i> Oracle</span>
+          <p>Demonstrated expertise in building and managing end-to-end machine learning solutions using Oracle Cloud
+            Infrastructure services.</p>
+          <div class="cert-frameworks">
+            <span class="framework-tag">Oracle Cloud</span>
+            <span class="framework-tag">OCI ML Services</span>
+            <span class="framework-tag">Data Science</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="cert-body">
+          <h3><a href="https://www.udemy.com/certificate/UC-575b1faf-b51c-46c2-8d21-0449b8c750ea/"
+              target="_blank">Python And Flask Framework</a></h3>
+          <span class="cert-issuer"><i class="fas fa-award"></i> Udemy</span>
+          <p>Gained expertise in building web applications with Flask, including RESTful APIs, routing, templates, and
+            database integration.</p>
+          <div class="cert-frameworks">
+            <span class="framework-tag">Python</span>
+            <span class="framework-tag">Flask</span>
+            <span class="framework-tag">SQLAlchemy</span>
+            <span class="framework-tag">REST APIs</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="s-head reveal">
+      <span class="s-label">// get in touch</span>
+      <h2 class="s-title">Contact Me</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <h3>Let's build something <span style="color:var(--c1)">intelligent</span> together.</h3>
+        <p>I'm actively looking for ML Engineer and Data Scientist opportunities. Whether it's a full-time role, an
+          internship, or a collaboration — let's connect!</p>
+        <div class="c-links">
+          <a href="mailto:priyarawat2334@gmail.com" class="c-link">
+            <div class="icon-wrap"><i class="fas fa-envelope"></i></div>
+            priyarawat2334@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/priyarawat05/" class="c-link" target="_blank">
+            <div class="icon-wrap"><i class="fab fa-linkedin-in"></i></div>
+            linkedin.com/in/priyarawat05
+          </a>
+          <a href="https://github.com/Priya-611" class="c-link" target="_blank">
+            <div class="icon-wrap"><i class="fab fa-github"></i></div>
+            github.com/Priya-611
+          </a>
+          <a href="priya resume current_newesttttt.pdf" class="c-link resume-dl" download>
+            <div class="icon-wrap" style="background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);"><i
+                class="fas fa-file-pdf" style="color:#22c55e;"></i></div>
+            <span>Download My Resume <span class="resume-badge">PDF</span></span>
+          </a>
+          <a href="#" class="c-link">
+            <div class="icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+            Phagwara, Punjab 🇮🇳 — Open to Remote
+          </a>
+        </div>
+      </div>
+      <!-- Standard native client mail generation via JS handler -->
+      <form class="c-form reveal-right" id="c-form">
+        <div class="fg">
+          <label>YOUR NAME</label>
+          <input type="text" id="contact-name" placeholder="Enter your name" required>
+        </div>
+        <div class="fg">
+          <label>YOUR EMAIL</label>
+          <input type="email" id="contact-email" placeholder="Enter your email" required>
+        </div>
+        <div class="fg">
+          <label>SUBJECT</label>
+          <input type="text" id="contact-subject" placeholder="Brief your message" required>
+        </div>
+        <div class="fg">
+          <label>MESSAGE</label>
+          <textarea id="contact-message" placeholder="Tell me about the opportunity..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-glow" style="width:fit-content;">
+          <i class="fas fa-envelope" style="margin-right:.4rem;"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="socials">
+      <a href="https://github.com/priyarawat1507" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/priya-rawat-b80b4b250" aria-label="LinkedIn" target="_blank"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:priyarawat2334@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="foot-copy">&copy; 2026 Priya Rawat &mdash; Crafted with Passion &amp; Data</p>
+  </footer>
+
+  <!-- ── Project Modal ── -->
+  <div class="modal-bg" id="modal-bg">
+    <div class="modal-box">
+      <button class="modal-close" id="m-close"><i class="fas fa-times"></i></button>
+      <div class="modal-stack" id="m-stack"></div>
+      <h2 class="modal-title" id="m-title"></h2>
+      <p class="modal-desc" id="m-desc"></p>
+      <div class="modal-btns">
+        <a href="#" id="m-demo" class="btn btn-glow" style="font-size:.85rem;padding:.7rem 1.5rem;"><i
+            class="fas fa-external-link-alt" style="margin-right:.3rem;"></i> Live Demo</a>
+        <a href="#" id="m-repo" class="btn btn-ghost" style="font-size:.85rem;padding:.7rem 1.5rem;"><i
+            class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+
+</html>
