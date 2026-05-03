@@ -28,101 +28,7 @@ document.querySelectorAll('a,button,.proj-card,.radial-card,.cert-card').forEach
   el.addEventListener('mouseleave', () => { cur.classList.remove('hover'); ring.classList.remove('hover'); });
 });
 
-/* ===== Floating Particles CSS Animation ===== */
-const pContainer = document.getElementById('particles-container');
-if (pContainer) {
-  for(let i=0; i<30; i++) {
-    const pt = document.createElement('div');
-    pt.className = 'b-particle';
-    const size = Math.random()*5 + 3;
-    pt.style.width = size+'px';
-    pt.style.height = size+'px';
-    pt.style.left = Math.random()*100 + 'vw';
-    pt.style.animationDuration = (Math.random()*15 + 10) + 's';
-    pt.style.animationDelay = (Math.random()*20) + 's';
-    pContainer.appendChild(pt);
-  }
-}
 
-/* ===== Neural Canvas Background ===== */
-const canvas = document.getElementById('bg');
-if (canvas) {
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let particles = [];
-  const particleCount = 200; // Intensely dense animated background
-
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.vx = (Math.random() - 0.5) * 0.5;
-      this.vy = (Math.random() - 0.5) * 0.5;
-      this.size = Math.random() * 2 + 1;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(192, 132, 252, 0.4)';
-      ctx.fill();
-    }
-  }
-
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle());
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-
-    // Mouse interaction
-    particles.forEach(p => {
-      const dx = mx - p.x;
-      const dy = my - p.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 120) {
-        p.x -= dx * 0.05;
-        p.y -= dy * 0.05;
-      }
-    });
-
-    // Draw connections
-    particles.forEach((p1, i) => {
-      particles.slice(i + 1).forEach(p2 => {
-        const dx = p1.x - p2.x;
-        const dy = p1.y - p2.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 150) {
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(192, 132, 252, ${0.3 * (1 - dist / 150)})`;
-          ctx.stroke();
-        }
-      });
-    });
-
-    requestAnimationFrame(animate);
-  }
-  animate();
-}
 
 /* ===== Navbar shrink ===== */
 let ticking = false;
@@ -150,7 +56,7 @@ function type() {
   const phrase = phrases[pi];
   typer.textContent = del ? phrase.slice(0, ci--) : phrase.slice(0, ci++);
   if (!del && ci > phrase.length) { del = true; return setTimeout(type, 1200); } // Reduced from 1800ms
-  if (del && ci < 0) { del = false; pi = (pi+1) % phrases.length; return setTimeout(type, 300); } // Reduced from 400ms
+  if (del && ci < 0) { del = false; pi = (pi + 1) % phrases.length; return setTimeout(type, 300); } // Reduced from 400ms
   setTimeout(type, del ? 50 : 100); // Slightly slower typing
 }
 type(); // Re-enabled after removing Font Awesome
@@ -160,10 +66,10 @@ let parallaxTicking = false;
 document.addEventListener('mousemove', e => {
   if (!parallaxTicking) {
     requestAnimationFrame(() => {
-      const x = (e.clientX / window.innerWidth - .5) * 15; 
-      const y = (e.clientY / window.innerHeight - .5) * 8;  
+      const x = (e.clientX / window.innerWidth - .5) * 15;
+      const y = (e.clientY / window.innerHeight - .5) * 8;
       const hw = document.querySelector('.hero-wrap');
-      if (hw) hw.style.transform = `translate(${x*.3}px,${y*.3}px)`;
+      if (hw) hw.style.transform = `translate(${x * .3}px,${y * .3}px)`;
       parallaxTicking = false;
     });
     parallaxTicking = true;
@@ -197,7 +103,7 @@ const ro = new IntersectionObserver((entries) => {
       });
       // Animate timeline
       e.target.querySelectorAll('.tl-item').forEach((item, i) => {
-        setTimeout(() => item.classList.add('active'), i*180);
+        setTimeout(() => item.classList.add('active'), i * 180);
       });
     }
   });
@@ -218,13 +124,13 @@ function drawDonut() {
   const dc = c.getContext('2d');
   c.width = 220; c.height = 220;
   const data = [
-    { label:'Python Development', val:35, color:'#c084fc' },
-    { label:'Machine Learning', val:30, color:'#7c3aed' },
-    { label:'Data Analytics', val:20, color:'#f0abfc' },
-    { label:'Deep Learning', val:15, color:'#38bdf8' }
+    { label: 'Python Development', val: 35, color: '#c084fc' },
+    { label: 'Machine Learning', val: 30, color: '#7c3aed' },
+    { label: 'Data Analytics', val: 20, color: '#f0abfc' },
+    { label: 'Deep Learning', val: 15, color: '#38bdf8' }
   ];
-  const total = data.reduce((s,d) => s+d.val, 0);
-  let start = -Math.PI/2;
+  const total = data.reduce((s, d) => s + d.val, 0);
+  let start = -Math.PI / 2;
   const cx = 110, cy = 110, r = 80, inner = 55;
   data.forEach(d => {
     const angle = (d.val / total) * Math.PI * 2;
@@ -237,13 +143,13 @@ function drawDonut() {
     start += angle;
   });
   // Donut hole
-  dc.beginPath(); dc.arc(cx,cy,inner,0,Math.PI*2);
+  dc.beginPath(); dc.arc(cx, cy, inner, 0, Math.PI * 2);
   dc.fillStyle = '#0a0d14'; dc.fill();
   // Center text
-  dc.fillStyle='#fff'; dc.font='bold 14px Outfit'; dc.textAlign='center'; dc.textBaseline='middle';
-  dc.fillText('Focus', cx, cy-8);
-  dc.fillStyle='#64748b'; dc.font='11px Inter';
-  dc.fillText('Areas', cx, cy+10);
+  dc.fillStyle = '#fff'; dc.font = 'bold 14px Outfit'; dc.textAlign = 'center'; dc.textBaseline = 'middle';
+  dc.fillText('Focus', cx, cy - 8);
+  dc.fillStyle = '#64748b'; dc.font = '11px Inter';
+  dc.fillText('Areas', cx, cy + 10);
 }
 drawDonut();
 
@@ -284,20 +190,20 @@ const mDemo = document.getElementById('m-demo');
 const mRepo = document.getElementById('m-repo');
 
 const projects = {
-  'Heart Disease Risk Predictor': {
-    desc: 'A machine learning classification model that predicts the likelihood of heart disease based on patient health parameters such as age, cholesterol levels, blood pressure, and more. The pipeline includes data preprocessing, exploratory data analysis (EDA), feature engineering, and comparison of multiple classifiers (Logistic Regression, Random Forest, SVM). The best model is selected based on accuracy, precision, and recall metrics.',
-    stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter'],
-    demo: '#', repo: 'https://github.com/Priya-611'
+  'Driver Drowsiness Detection System': {
+    desc: 'Crafted a real-time computer vision system to detect driver drowsiness using OpenCV and MobileNet. Constructed a deep learning pipeline featuring Haar Cascade face detection, eye-region extraction, and time-based alert logic. Integrated an automated alarm system that triggers when drowsiness persists for more than 5 seconds.',
+    stack: ['Python', 'OpenCV', 'TensorFlow', 'Keras', 'MobileNet'],
+    demo: '#', repo: 'https://github.com/Priya-611/AlertVision'
   },
   'Adidas Sales Dashboard': {
     desc: 'An interactive business intelligence dashboard that visualizes Adidas sales data across multiple regions, product categories, and time periods. Built with Excel for data cleaning and Power BI for visualization, the dashboard provides KPIs, trend analysis, and region-wise performance breakdowns. The insights help stakeholders make data-driven decisions on inventory, marketing spend, and expansion strategies.',
     stack: ['Excel', 'Power BI', 'Data Cleaning', 'DAX', 'Data Visualization', 'Business Intelligence'],
-    demo: '#', repo: 'https://github.com/Priya-611'
+    demo: '#', repo: 'https://github.com/Priya-611/Adidas-Sales-Dashboard'
   },
-  'House Price Predictor': {
-    desc: 'A regression-based ML project to accurately predict residential property prices using features such as square footage, number of bedrooms, location, and amenities. Comprehensive EDA was performed to identify key price drivers. Multiple regression algorithms — Linear Regression, Ridge, Lasso, and Gradient Boosting — were benchmarked, with hyperparameter tuning to maximize R² and minimize RMSE.',
-    stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Regression Models'],
-    demo: '#', repo: 'https://github.com/Priya-611'
+  'Heart Disease Risk Predictor': {
+    desc: 'Developed an ML web app for heart disease prediction with preprocessing, model training, and real-time backend integration. Implemented logistic regression with feature scaling and evaluation, achieving 84% test accuracy. Designed a responsive AI-assisted frontend integrated with the prediction API.',
+    stack: ['Python', 'Flask', 'Scikit-learn', 'NumPy', 'Pandas', 'HTML', 'CSS'],
+    demo: '#', repo: 'https://github.com/Priya-611/Heart-Disease-Risk-Predictor'
   }
 };
 
@@ -308,7 +214,7 @@ document.querySelectorAll('[data-proj]').forEach(btn => {
     const d = projects[key];
     mTitle.textContent = key;
     mDesc.textContent = d.desc;
-    mStack.innerHTML = d.stack.map(s=>`<span class="ptag">${s}</span>`).join('');
+    mStack.innerHTML = d.stack.map(s => `<span class="ptag">${s}</span>`).join('');
     mDemo.href = d.demo; mRepo.href = d.repo;
     mRepo.target = '_blank';
     modalBg.classList.add('show');
@@ -318,14 +224,14 @@ document.querySelectorAll('[data-proj]').forEach(btn => {
 function closeModal() { modalBg.classList.remove('show'); document.body.style.overflow = ''; }
 document.getElementById('m-close').addEventListener('click', closeModal);
 modalBg.addEventListener('click', e => { if (e.target === modalBg) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 /* ===== Smooth Scroll ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
     const target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
@@ -398,14 +304,14 @@ if (dsaSection) dsaObs.observe(dsaSection);
 /* ===== Direct AJAX Contact Form Handler ===== */
 const contactForm = document.getElementById('c-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     const btn = this.querySelector('button[type="submit"]');
     const originalBtnHTML = btn.innerHTML;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:.4rem;"></i> Sending...';
     btn.style.pointerEvents = 'none';
-    
+
     const name = document.getElementById('contact-name').value;
     const email = document.getElementById('contact-email').value;
     const subject = document.getElementById('contact-subject').value;
@@ -413,7 +319,7 @@ if (contactForm) {
 
     fetch("https://formsubmit.co/ajax/priyarawat2334@gmail.com", {
       method: "POST",
-      headers: { 
+      headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
@@ -425,29 +331,29 @@ if (contactForm) {
         _captcha: "false"
       })
     })
-    .then(response => response.json())
-    .then(data => {
-      // Check if it's the very first activation link response
-      if(data.success === 'true' || data.success === true) {
-        btn.innerHTML = '<i class="fas fa-thumbs-up fa-bounce" style="margin-right:.4rem;"></i> Message Sent Successfully!';
-        btn.style.background = 'rgba(192, 132, 252, 0.2)';
-        btn.style.border = '1px solid #c084fc';
-        this.reset();
-      } else {
-        btn.innerHTML = '<i class="fas fa-exclamation-triangle" style="margin-right:.4rem;"></i> Verify your email!';
-      }
-    })
-    .catch(error => {
-      btn.innerHTML = '<i class="fas fa-exclamation-triangle" style="margin-right:.4rem;"></i> Needs Email Verification!';
-    })
-    .finally(() => {
-      setTimeout(() => {
-        btn.innerHTML = originalBtnHTML;
-        btn.style.pointerEvents = 'auto';
-        btn.style.background = '';
-        btn.style.border = '';
-      }, 3000);
-    });
+      .then(response => response.json())
+      .then(data => {
+        // Check if it's the very first activation link response
+        if (data.success === 'true' || data.success === true) {
+          btn.innerHTML = '<i class="fas fa-thumbs-up fa-bounce" style="margin-right:.4rem;"></i> Message Sent Successfully!';
+          btn.style.background = 'rgba(192, 132, 252, 0.2)';
+          btn.style.border = '1px solid #c084fc';
+          this.reset();
+        } else {
+          btn.innerHTML = '<i class="fas fa-exclamation-triangle" style="margin-right:.4rem;"></i> Verify your email!';
+        }
+      })
+      .catch(error => {
+        btn.innerHTML = '<i class="fas fa-exclamation-triangle" style="margin-right:.4rem;"></i> Needs Email Verification!';
+      })
+      .finally(() => {
+        setTimeout(() => {
+          btn.innerHTML = originalBtnHTML;
+          btn.style.pointerEvents = 'auto';
+          btn.style.background = '';
+          btn.style.border = '';
+        }, 3000);
+      });
   });
 }
 
